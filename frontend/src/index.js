@@ -66,11 +66,11 @@ function WeatherApp() {
 // page elements 
 
 function Header() {
-  return <header className="header"> heading </header>
+  return <header className="header"> whether </header>
 }
 
 function NavigationBar() {
-  return  <h1> navigation bar </h1>
+  return  <nav> navigation bar </nav>
 }
 
 function MainContent() {
@@ -83,7 +83,7 @@ function MainContent() {
 }
 
 function Footer() {
-  return <h1> footer </h1>
+  return <footer className="footer"> footer </footer>
 }
 
 function Page() {
