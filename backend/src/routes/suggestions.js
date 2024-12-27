@@ -28,6 +28,14 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+
+// find suggestions based on the weather 
+router.route('/match').get((req,res) => {
+    Suggestion.find( { weather : 'good'})
+        .then(suggestions => res.json(suggestions))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
 // update
 
 // delete 
