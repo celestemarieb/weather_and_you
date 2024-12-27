@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import axios from 'axios'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -63,6 +64,18 @@ function WeatherApp() {
   );
 }
 
+// get suggestions
+function ShowSuggestions(){
+  const [suggestions, setSuggestions] = useState([]);
+
+  useEffect (() => {
+    axios.get('http://localhost:8080/suggestions')
+
+  })
+  const currentSuggestion = "suggestion"
+  return currentSuggestion
+}
+
 // page elements 
 
 function Header() {
@@ -78,6 +91,7 @@ function MainContent() {
     <>
       <GetDate />
       <WeatherApp />
+      <ShowSuggestions/>
     </>
     )
 }
