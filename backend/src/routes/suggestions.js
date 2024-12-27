@@ -29,15 +29,18 @@ router.route('/add').post((req, res) => {
 });
 
 
-// find suggestions based on the weather 
-router.route('/match').get((req,res) => {
+// find suggestions based on good weather 
+router.route('/good').get((req,res) => {
     Suggestion.find( { weather : 'good'})
         .then(suggestions => res.json(suggestions))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-// update
-
-// delete 
+// find suggestions based on bad weather 
+router.route('/bad').get((req,res) => {
+    Suggestion.find( { weather : 'bad'})
+        .then(suggestions => res.json(suggestions))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
 
 export default router;
